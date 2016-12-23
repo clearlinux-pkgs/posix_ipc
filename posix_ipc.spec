@@ -4,7 +4,7 @@
 #
 Name     : posix_ipc
 Version  : 1.0.0
-Release  : 19
+Release  : 20
 URL      : https://pypi.python.org/packages/source/p/posix_ipc/posix_ipc-1.0.0.tar.gz
 Source0  : https://pypi.python.org/packages/source/p/posix_ipc/posix_ipc-1.0.0.tar.gz
 Summary  : POSIX IPC primitives (semaphores, shared memory and message queues) for Python
@@ -37,19 +37,19 @@ python components for the posix_ipc package.
 %setup -q -n posix_ipc-1.0.0
 
 %build
+export LANG=C
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %check
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=intel.com,localhost
-PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages py.test-2.7 --verbose
-PYTHONPATH=%{buildroot}/usr/lib/python3.5/site-packages py.test-3.5 --verbose
+export no_proxy=localhost,127.0.0.1,0.0.0.0
+PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages py.test-2.7 --verbose || :
 %install
 rm -rf %{buildroot}
-python2 setup.py build -b py2 install --root=%{buildroot}
-python3 setup.py build -b py3 install --root=%{buildroot}
+python2 -tt setup.py build -b py2 install --root=%{buildroot}
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)
