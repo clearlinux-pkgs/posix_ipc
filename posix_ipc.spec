@@ -4,7 +4,7 @@
 #
 Name     : posix_ipc
 Version  : 1.0.4
-Release  : 45
+Release  : 46
 URL      : http://pypi.debian.net/posix_ipc/posix_ipc-1.0.4.tar.gz
 Source0  : http://pypi.debian.net/posix_ipc/posix_ipc-1.0.4.tar.gz
 Summary  : POSIX IPC primitives (semaphores, shared memory and message queues) for Python
