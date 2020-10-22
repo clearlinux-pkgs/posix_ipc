@@ -4,7 +4,7 @@
 #
 Name     : posix_ipc
 Version  : 1.0.4
-Release  : 49
+Release  : 50
 URL      : http://pypi.debian.net/posix_ipc/posix_ipc-1.0.4.tar.gz
 Source0  : http://pypi.debian.net/posix_ipc/posix_ipc-1.0.4.tar.gz
 Summary  : POSIX IPC primitives (semaphores, shared memory and message queues) for Python
@@ -18,10 +18,13 @@ BuildRequires : py
 BuildRequires : pytest
 
 %description
-posix_ipc is a Python module (written in C) that permits creation and
-manipulation of POSIX inter-process semaphores, shared memory and message
-queues on platforms supporting the POSIX Realtime Extensions a.k.a. POSIX
-1003.1b-1993. This includes nearly all Unices and Windows + Cygwin 1.7.
+manipulation of POSIX inter-process semaphores, shared memory and message 
+        queues on platforms supporting the POSIX Realtime Extensions a.k.a. POSIX
+        1003.1b-1993. This includes nearly all Unices and Windows + Cygwin 1.7.
+        
+        posix_ipc is compatible with Python 2 and 3.
+        
+        The latest version, contact info, sample code, etc. are available on PyPI
 
 %package license
 Summary: license components for the posix_ipc package.
@@ -59,12 +62,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583202993
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1603399149
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
-export FCFLAGS="$CFLAGS -fno-lto "
-export FFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
