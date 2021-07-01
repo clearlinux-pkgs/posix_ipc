@@ -4,7 +4,7 @@
 #
 Name     : posix_ipc
 Version  : 1.0.5
-Release  : 57
+Release  : 58
 URL      : https://files.pythonhosted.org/packages/bc/2f/9a7901aa26fb0e02a671b989ba814d059a0f45af85cea31b9c9eef7e2dda/posix_ipc-1.0.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/bc/2f/9a7901aa26fb0e02a671b989ba814d059a0f45af85cea31b9c9eef7e2dda/posix_ipc-1.0.5.tar.gz
 Summary  : POSIX IPC primitives (semaphores, shared memory and message queues) for Python
